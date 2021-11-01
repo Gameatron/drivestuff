@@ -1,9 +1,6 @@
 import os
 import dotenv
 import psycopg2
-from pySMART import Device
-dri = Device('C:\\')
-print(dri)
 
 dotenv.load_dotenv()
 conn = psycopg2.connect(os.getenv("DATABASE_URL"), sslmode='require')
@@ -22,7 +19,6 @@ class Drive:
     
     def __str__(self):
         return str(self.info)
-print(devlist)
 while True:
     ans = input("Would you like to (v)iew a drive, (a)dd a drive manually, or (c)ancel?\n> ")
     if ans.lower() == 'v':
